@@ -73,8 +73,12 @@ class Level:
                         for ent in self.entity_list:
                             if isinstance(ent, Player) and ent.name == 'Player1':
                                 player_score[0] += ent.score
+                                if self.name == "Level3" and player_score[0] > 0:
+                                    player_score[0] /= 2
                             if isinstance(ent, Player) and ent.name == 'Player2':
                                 player_score[1] += ent.score
+                                if self.name == "Level3" and player_score[1] > 0:
+                                    player_score[1] /= 2
                         return True
 
                 found_player = False
